@@ -83,7 +83,6 @@ describe('Node', () => {
 
 		it('assigns null to child.parent', () => {
 			parent.removeChild(leftChild);
-
 			expect(leftChild.parent).to.equal(null);
 		})
 	});
