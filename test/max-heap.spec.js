@@ -1,7 +1,7 @@
 const Node = require('../src/node');
 const MaxHeap = require('../src/max-heap');
 
-describe('MaxHeap', () => {
+describe.skip('MaxHeap', () => {
 	describe('#constructor', () => {
 		const h = new MaxHeap();
 
@@ -14,7 +14,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe('#push', () => {
+	describe.skip('#push', () => {
 		let h;
 
 		beforeEach(() => {
@@ -44,7 +44,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe('#insertNode', () => {
+	describe.skip('#insertNode', () => {
 		let h;
 
 		beforeEach(() => {
@@ -126,7 +126,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe('#shiftNodeUp', () => {
+	describe.skip('#shiftNodeUp', () => {
 		let h;
 
 		beforeEach(() => {
@@ -194,7 +194,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe('#clear', () => {
+	describe.skip('#clear', () => {
 		it('assigns null to root and [] to parentNodes', () => {
 			const h = new MaxHeap();
 			h.push(0, 0);
@@ -208,7 +208,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe('#pop', () => {
+	describe.skip('#pop', () => {
 		it('does nothing if heap is empty', () => {
 			const h = new MaxHeap();
 			expect(() => {
@@ -269,7 +269,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe('#detachRoot', () => {
+	describe.skip('#detachRoot', () => {
 		let h;
 
 		beforeEach(() => {
@@ -303,7 +303,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe('#restoreRootFromLastInsertedNode', () => {
+	describe.skip('#restoreRootFromLastInsertedNode', () => {
 		let h;
 
 		beforeEach(() => {
@@ -361,7 +361,7 @@ describe('MaxHeap', () => {
 
 	});
 
-	describe('#shiftNodeDown', () => {
+	describe.skip('#shiftNodeDown', () => {
 		let h;
 
 		beforeEach(() => {
@@ -463,7 +463,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe('#size', () => {
+	describe.skip('#size', () => {
 		it('returns current size of heap', () => {
 			const h = new MaxHeap();
 			expect(h.size()).to.equal(0);
@@ -484,7 +484,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe('#isEmpty', () => {
+	describe.skip('#isEmpty', () => {
 		it('reutrns true if heap is empty', () => {
 			const h = new MaxHeap();
 			expect(h.isEmpty()).to.equal(true);
