@@ -1,7 +1,7 @@
 const Node = require('../src/node');
 const MaxHeap = require('../src/max-heap');
 
-describe.skip('MaxHeap', () => {
+describe('MaxHeap', () => {
 	describe('#constructor', () => {
 		const h = new MaxHeap();
 
@@ -14,7 +14,7 @@ describe.skip('MaxHeap', () => {
 		});
 	});
 
-	describe.skip('#push', () => {
+	describe('#push', () => {
 		let h;
 
 		beforeEach(() => {
@@ -44,7 +44,7 @@ describe.skip('MaxHeap', () => {
 		});
 	});
 
-	describe.skip('#insertNode', () => {
+	describe('#insertNode', () => {
 		let h;
 
 		beforeEach(() => {
@@ -126,7 +126,7 @@ describe.skip('MaxHeap', () => {
 		});
 	});
 
-	describe.skip('#shiftNodeUp', () => {
+	describe('#shiftNodeUp', () => {
 		let h;
 
 		beforeEach(() => {
@@ -152,7 +152,7 @@ describe.skip('MaxHeap', () => {
 			];
 		});
 
-		it('shifts node up until heap property is valid', () => {
+		it.only('shifts node up until heap property is valid', () => {
 			const newRoot = h.root.left.left;
 			h.shiftNodeUp(h.root.left.left);
 			expect(h.root).to.equal(newRoot);
@@ -194,7 +194,7 @@ describe.skip('MaxHeap', () => {
 		});
 	});
 
-	describe.skip('#clear', () => {
+	describe('#clear', () => {
 		it('assigns null to root and [] to parentNodes', () => {
 			const h = new MaxHeap();
 			h.push(0, 0);
@@ -463,7 +463,7 @@ describe.skip('MaxHeap', () => {
 		});
 	});
 
-	describe.skip('#size', () => {
+	describe('#size', () => {
 		it('returns current size of heap', () => {
 			const h = new MaxHeap();
 			expect(h.size()).to.equal(0);
@@ -484,7 +484,7 @@ describe.skip('MaxHeap', () => {
 		});
 	});
 
-	describe.skip('#isEmpty', () => {
+	describe('#isEmpty', () => {
 		it('reutrns true if heap is empty', () => {
 			const h = new MaxHeap();
 			expect(h.isEmpty()).to.equal(true);
