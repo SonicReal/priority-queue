@@ -152,7 +152,7 @@ describe('MaxHeap', () => {
 			];
 		});
 
-		it.only('shifts node up until heap property is valid', () => {
+		it('shifts node up until heap property is valid', () => {
 			const newRoot = h.root.left.left;
 			h.shiftNodeUp(h.root.left.left);
 			expect(h.root).to.equal(newRoot);
@@ -269,7 +269,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe.skip('#detachRoot', () => {
+	describe('#detachRoot', () => {
 		let h;
 
 		beforeEach(() => {
@@ -361,7 +361,7 @@ describe('MaxHeap', () => {
 
 	});
 
-	describe.skip('#shiftNodeDown', () => {
+	describe('#shiftNodeDown', () => {
 		let h;
 
 		beforeEach(() => {
@@ -396,7 +396,7 @@ describe('MaxHeap', () => {
 			expect(h.root.left.left).to.equal(newDeepest);
 		});
 
-		it('maintants parentNodes in correct state', () => {
+		it.only('maintants parentNodes in correct state', () => {
 			const correctParentNodesOrderAfterShiftUp = [
 				h.root.left.left,
 				h.root.right,

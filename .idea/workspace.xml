@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/max-heap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/max-heap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/max-heap.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/max-heap.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/node.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/node.spec.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +46,8 @@
       <option name="presentableId" value="Default" />
       <updated>1570984616327</updated>
       <workItem from="1570984618760" duration="6113000" />
-      <workItem from="1571033320555" duration="8581000" />
+      <workItem from="1571033320555" duration="10668000" />
+      <workItem from="1571058184089" duration="3521000" />
     </task>
     <servers />
   </component>
