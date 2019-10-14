@@ -16,21 +16,26 @@ class MaxHeap {
     }
 
     pop() {
-        return this.detachRoot();
+
+        const root = this.detachRoot();
+        this.restoreRootFromLastInsertedNode(root);
+        return root ? root.data : null;
     }
 
     detachRoot() {
         const root = this.root;
+        this.root = null;
         this.heap--;
-        const root_idx = this.parentNodes.indexOf(root);
-        if (root_idx >= 0) {
-            this.parentNodes.splice(root_idx, 1);
-        }
-        this.root = this.heap === 0 ? null : this.parentNodes[0];
         return root;
     }
 
     restoreRootFromLastInsertedNode(detached) {
+        this.root = this.parentNodes.pop();
+        this.root.left = detached.left;
+        this.root.right = detached.right;
+
+        this.parentNodes.unshift(this.root.parent);
+        this.root.remove();
 
     }
 
@@ -86,26 +91,34 @@ class MaxHeap {
         if (node.left && node.left.priority > node.priority) {
             biggest_child = node.left;
         }
-        if (node.right && node.right.priority > biggest_child) {
+        if (node.right && node.right.priority > biggest_child.priority) {
             biggest_child = node.right;
         }
         if (biggest_child === node) {
             return;
         }
+
         if (this.root === node) {
             this.root = biggest_child;
         }
         const node_idx = this.parentNodes.indexOf(node);
         const biggest_child_idx = this.parentNodes.indexOf(biggest_child);
+
         if (node_idx >= 0) {
             if (biggest_child_idx >= 0) {
-                this.parentNodes[node_idx] = biggest_child_idx;
+                this.parentNodes[node_idx] = biggest_child;
                 this.parentNodes[biggest_child_idx] = node;
             } else {
-                this.parentNodes[node_idx] = biggest_child_idx;
+                this.parentNodes[node_idx] = biggest_child;
+            }
+        } else {
+            if (biggest_child_idx >= 0) {
+                this.parentNodes[biggest_child_idx] = node;
             }
         }
+
         biggest_child.swapWithParent();
+
         this.shiftNodeDown(node);
     }
 }
