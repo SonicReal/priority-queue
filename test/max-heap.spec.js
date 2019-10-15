@@ -303,7 +303,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe.only('#restoreRootFromLastInsertedNode', () => {
+	describe('#restoreRootFromLastInsertedNode', () => {
 		let h;
 
 		beforeEach(() => {
@@ -323,23 +323,22 @@ describe('MaxHeap', () => {
 
 			expect(h.root).to.equal(lastInsertedNode);
 			expect(h.root.left).to.equal(left);
-			// expect(left.parent).to.equal(lastInsertedNode);
+			expect(left.parent).to.equal(lastInsertedNode);
 		});
 
 		it('should maintain correct state of parentNodes', () => {
 			const root = h.root;
 			const left = h.root.left;
 			const lastInsertedNode = h.root.right;
-
 			const detached = h.detachRoot();
 			h.restoreRootFromLastInsertedNode(detached);
 
 			expect(h.parentNodes.indexOf(root)).to.equal(-1);
-			// expect(h.parentNodes[0]).to.equal(lastInsertedNode);
-			// expect(h.parentNodes[1]).to.equal(left);
+			expect(h.parentNodes[0]).to.equal(lastInsertedNode);
+			expect(h.parentNodes[1]).to.equal(left);
 		});
 
-		it.only('should maintain correct order of parentNodes when right child is moved', () => {
+		it('should maintain correct order of parentNodes when right child is moved', () => {
 			h.push(14,14);
 			h.push(13,13);
 			h.push(16,16);
